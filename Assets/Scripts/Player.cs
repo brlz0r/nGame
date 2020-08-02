@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public float time = 6.0f;
     void Start()
     {
-        time = UnityEngine.Random.Range(5.0f, 21.0f);
+        time = GetComponent<Money_Subs>().UnityEngineRandom(5.0f, 21.0f);
     }
 
     void Update()
@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
         if (time <= 0.0f)
         {
             anim.Play();
-            time = UnityEngine.Random.Range(5.0f, 21.0f);
+            time = GetComponent<Money_Subs>().UnityEngineRandom(5.0f, 21.0f);
         }
     }
 }

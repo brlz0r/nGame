@@ -32,7 +32,7 @@ public class Money_Subs : MonoBehaviour
         TextDonation = "Thanks";
         minMoney = 1;
         maxMoney = 1234;
-        _RandomDonateTime = UnityEngine.Random.Range(5.0f, 15.0f);
+        _RandomDonateTime = UnityEngineRandom(5.0f, 15.0f);
     }
 
     // Update is called once per frame
@@ -42,7 +42,7 @@ public class Money_Subs : MonoBehaviour
         if (_RandomDonateTime <= 0)
         {
             _DonateSubs();
-            _RandomDonateTime = UnityEngine.Random.Range(15.0f, 35.0f);
+            _RandomDonateTime = UnityEngineRandom(15.0f, 35.0f);
         }
         if (DonateActive == true)
         {
@@ -60,15 +60,20 @@ public class Money_Subs : MonoBehaviour
         DonateActive = true;
         WindDonate.SetActive(true);
         DonatePlayerName = "";
-        SizeRandomName = (int)UnityEngine.Random.Range((float)3, (float)9);
+        SizeRandomName = (int)UnityEngineRandom(3,9);
         for (int i = 0; i < SizeRandomName; i++)
         {
-            DonatePlayerName += Alphabet[(int)UnityEngine.Random.Range((float)0, (float)25)];
+            DonatePlayerName += Alphabet[(int)UnityEngineRandom(0, 25)];
         }
         inthMoney = UnityEngine.Random.Range(minMoney, maxMoney);
         strhMoney = "$" + inthMoney;
         Name.text = DonatePlayerName + " " + "Donated";
         Money.text = strhMoney;
+    }
+public float UnityEngineRandom(float min, float max)
+    {
+        float _CurrentRandom = UnityEngine.Random.Range(min, max);
+        return _CurrentRandom;
     }
 }
 

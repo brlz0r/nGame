@@ -12,7 +12,7 @@ public class Window : MonoBehaviour
     public int _random;
     void Start()
     {
-        _random = (int)UnityEngine.Random.Range(0.0f, hWind - 1);
+        _random = (int)GetComponent<Money_Subs>().UnityEngineRandom(0.0f, hWind - 1);
         _Win(false);
     }
 
@@ -23,7 +23,7 @@ public class Window : MonoBehaviour
         if (time <= 0.0f)
         {
             Win[_random].SetActive(false);
-            _random = (int)UnityEngine.Random.Range(0.0f, hWind - 1);
+            _random = (int)GetComponent<Money_Subs>().UnityEngineRandom(0.0f, hWind - 1);
             time = 10.0f;
         }
     }
