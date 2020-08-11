@@ -1,10 +1,12 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - CameraConstantWidth
+    - Clock
     - Clouds
+    - Donate
     - Equipment
-    - Money_Subs
+    - Main
+    - Menu
     - Player
     - SaveLoad
     Unity.2D.Animation.Editor.dll:
@@ -29,12 +31,13 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/SampleScene.unity:
+    Assets/Scenes/Main.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -53,46 +56,52 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 111
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 15368}
+      Script: {instanceID: 11768}
     - Class: 114
-      Script: {instanceID: 15674}
+      Script: {instanceID: 12076}
     - Class: 114
-      Script: {instanceID: 15728}
+      Script: {instanceID: 12130}
     - Class: 114
-      Script: {instanceID: 15772}
+      Script: {instanceID: 12176}
     - Class: 114
-      Script: {instanceID: 16430}
+      Script: {instanceID: 12842}
     - Class: 114
-      Script: {instanceID: 16484}
+      Script: {instanceID: 12898}
     - Class: 114
-      Script: {instanceID: 16744}
+      Script: {instanceID: 13162}
     - Class: 114
-      Script: {instanceID: 16936}
+      Script: {instanceID: 13354}
     - Class: 114
-      Script: {instanceID: 17560}
+      Script: {instanceID: 13616}
     - Class: 114
-      Script: {instanceID: 17578}
+      Script: {instanceID: 13988}
     - Class: 114
-      Script: {instanceID: 17982}
+      Script: {instanceID: 14008}
     - Class: 114
-      Script: {instanceID: 18000}
+      Script: {instanceID: 14416}
     - Class: 114
-      Script: {instanceID: 18188}
+      Script: {instanceID: 14434}
     - Class: 114
-      Script: {instanceID: 18288}
+      Script: {instanceID: 14482}
     - Class: 114
-      Script: {instanceID: 18626}
+      Script: {instanceID: 14624}
     - Class: 114
-      Script: {instanceID: 21902}
+      Script: {instanceID: 14726}
     - Class: 114
-      Script: {instanceID: 21904}
+      Script: {instanceID: 15068}
     - Class: 114
-      Script: {instanceID: 30494}
+      Script: {instanceID: 15070}
+    - Class: 114
+      Script: {instanceID: 15634}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -111,11 +120,81 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
+      Script: {instanceID: 0}
     - Class: 331
       Script: {instanceID: 0}
     - Class: 850595691
       Script: {instanceID: 0}
+    Assets/Scenes/Menu.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11768}
+    - Class: 114
+      Script: {instanceID: 12130}
+    - Class: 114
+      Script: {instanceID: 12842}
+    - Class: 114
+      Script: {instanceID: 13616}
+    - Class: 114
+      Script: {instanceID: 14434}
+    - Class: 114
+      Script: {instanceID: 15070}
+    - Class: 114
+      Script: {instanceID: 28026}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Shop.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Shop
   - hash:
       serializedVersion: 2
       Hash: 4bc4346a71a8df53a6b106f68ef3a190
@@ -358,16 +437,10 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: d5dd7fe391331551e19f8acb2cd8c816
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SaveLoad
-  - hash:
-      serializedVersion: 2
-      Hash: b3ab2106268377ffe25dd18ac23dca28
-    assemblyName: Unity.TextMeshPro.dll
-    namespaceName: TMPro
-    className: TMP_Asset
   - hash:
       serializedVersion: 2
       Hash: 040dd48e3a027d5424519a5fa2009df4
@@ -388,10 +461,10 @@ ScriptsOnlyBuild:
     className: SpriteSkinEntity
   - hash:
       serializedVersion: 2
-      Hash: e10bc8b7c38de7bce973673fe6b7d3c7
+      Hash: e1286fa75057e897407e4148a431ba2f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Money_Subs
+    className: Donate
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -466,7 +539,7 @@ ScriptsOnlyBuild:
     className: SpriteLibraryAsset
   - hash:
       serializedVersion: 2
-      Hash: 0b72c8cb307a829156936043ce529602
+      Hash: 87ad3705a58f19c47136728d4a6e9c47
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Settings
@@ -490,7 +563,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: e4aac510b698bae77a5dbde189fe88e5
+      Hash: 760787567e1b60d64a3e421ab83ee14a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshProUGUI
@@ -520,7 +593,13 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 2b01bd84d91662f200af23c776ac1939
+      Hash: d7334e603dc303e77a0172e78660ee6a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Menu
+  - hash:
+      serializedVersion: 2
+      Hash: b679c19f0726cf35303df526b4ba8eec
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -538,7 +617,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: a01d7cd1372d550f912f7121e6ebe739
+      Hash: a2612813f45d0ced02c3e4bc9dbea8b4
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextMeshPro
@@ -574,7 +653,7 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
-      Hash: 8649814970b42d345b89944b862453cc
+      Hash: 5dea360fb0b147724ac344e6f399c2f3
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SubMesh
@@ -596,6 +675,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: f6a5ec65ac423bb8dc2045fac125c6d8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Clock
   - hash:
       serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b
@@ -634,11 +719,13 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: a61e78a78f07f79732ae8c13799c9bc4
+      Hash: d7334e603dc303e77a0172e78660ee6a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: CameraConstantWidth
+    className: Main
   platform: 13
   scenePathNames:
-  - Assets/Scenes/SampleScene.unity
+  - Assets/Scenes/Main.unity
+  - Assets/Scenes/Menu.unity
+  - Assets/Scenes/Shop.unity
   playerPath: D:/nGame/nGame/Test.apk

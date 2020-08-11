@@ -8,10 +8,10 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] private Button _Menu;
-
+    [SerializeField] private Button _OpenMenu;
+    [SerializeField] private GameObject _Menu; 
     public void OpenMenu()
     {
-        SceneManager.LoadScene("Menu");
+        _Menu.SetActive(true);
     }
 }
