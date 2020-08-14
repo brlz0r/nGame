@@ -15,6 +15,7 @@ public class Donate : MonoBehaviour
     public float RandomDonateTime;
     public bool DonateActive = false;
     public bool isDonate = false;
+    public bool isStreaming = true;
     public string strhMoney;
     private string TextDonation;
     private int SizeRandomName;
@@ -29,6 +30,7 @@ public class Donate : MonoBehaviour
     };
     private void Start()
     {
+        isStreaming = true;
         TimeDonationWind = 6.0f;
         TextDonation = "Thanks";
         minMoney = 1;
@@ -37,20 +39,23 @@ public class Donate : MonoBehaviour
     }
     private void Update()
     {
-        RandomDonateTime -= Time.deltaTime; 
-        if (RandomDonateTime <= 0)
+        if (isStreaming)
         {
-            _DonateSubs();
-            RandomDonateTime = UnityEngineRandom(15.0f, 35.0f);
-        }
-        if (DonateActive == true)
-        {
-            TimeDonationWind -= Time.deltaTime;
-            if (TimeDonationWind <= 0)
+            RandomDonateTime -= Time.deltaTime;
+            if (RandomDonateTime <= 0)
             {
-                TimeDonationWind = 6.0f;
-                WindDonate.SetActive(false);
-                DonateActive = false;
+                _DonateSubs();
+                RandomDonateTime = UnityEngineRandom(15.0f, 35.0f);
+            }
+            if (DonateActive == true)
+            {
+                TimeDonationWind -= Time.deltaTime;
+                if (TimeDonationWind <= 0)
+                {
+                    TimeDonationWind = 6.0f;
+                    WindDonate.SetActive(false);
+                    DonateActive = false;
+                }
             }
         }
     }
