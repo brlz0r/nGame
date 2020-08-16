@@ -6,10 +6,9 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-
-    public int Money;
-    public int Followers;
     public int Viewers;
+    public int Money ;
+    public int Followers;
     public int Level;
     public int DonateValue;
 
@@ -17,20 +16,19 @@ public class Player : MonoBehaviour
     [SerializeField] private Animation Coffee;
     [SerializeField] private Animation PlayerA;
 
-    [SerializeField] private Text text;
-
     private float time = 6.0f;
     private void Start()
     {
         time = GetComponent<Donate>().UnityEngineRandom(5.0f, 21.0f);
+        Viewers = 3;
+        Followers = 3;
     }
 
     private void Update()
     {
-        text.text = Money.ToString();
         if (GetComponent<Donate>().isDonate)
         {
-            Money += GetComponent<Donate>().inthMoney;
+            Money += GetComponent<Donate>().Money;
             GetComponent<Donate>().isDonate = false;
         }
         time -= Time.deltaTime;

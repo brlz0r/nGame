@@ -5,36 +5,39 @@ using UnityEngine.UI;
 
 public class Donate : MonoBehaviour
 {
-    [SerializeField] private GameObject WindDonate;
-    [SerializeField] private Text Name;
-    [SerializeField] private Text Money;
-    [SerializeField] private Text yourMoney;
+    [SerializeField] private GameObject WindowDonate;
+    [SerializeField] private Text NameText;
+    [SerializeField] private Text MoneyText;
+    
     public int minMoney;
     public int maxMoney;
-    public int inthMoney;
+    public int Money;
+    private int SizeRandomName; 
+
     public float RandomDonateTime;
+    private float TimeDonationWindow; 
+
     public bool DonateActive = false;
     public bool isDonate = false;
     public bool isStreaming = true;
-    public string strhMoney;
+    
     private string TextDonation;
-    private int SizeRandomName;
-    private float TimeDonationWind;
-    private string DonatePlayerName; 
-    private readonly string[] Alphabet = new string[] 
+    private string DonatePlayerName;
+    
+    private readonly char[] Alphabet = new char[] 
     {
-        "a", "b", "c", "d", "e", "f", "g", "h",
-        "i", "j", "k", "l", "m", "n", "o", "p", 
-        "q", "r", "s", "t", "u", "v", "w", "x", 
-        "y", "z"
+        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+        'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+        'y', 'z'
     };
     private void Start()
     {
         isStreaming = true;
-        TimeDonationWind = 6.0f;
+        TimeDonationWindow = 6.0f;
         TextDonation = "Thanks";
         minMoney = 1;
-        maxMoney = 1234;
+        maxMoney = 15;
         RandomDonateTime = UnityEngineRandom(5.0f, 15.0f);
     }
     private void Update()
@@ -44,41 +47,39 @@ public class Donate : MonoBehaviour
             RandomDonateTime -= Time.deltaTime;
             if (RandomDonateTime <= 0)
             {
-                _DonateSubs();
+                _Donate();
                 RandomDonateTime = UnityEngineRandom(15.0f, 35.0f);
             }
             if (DonateActive == true)
             {
-                TimeDonationWind -= Time.deltaTime;
-                if (TimeDonationWind <= 0)
+                TimeDonationWindow -= Time.deltaTime;
+                if (TimeDonationWindow <= 0)
                 {
-                    TimeDonationWind = 6.0f;
-                    WindDonate.SetActive(false);
+                    TimeDonationWindow = 6.0f;
+                    WindowDonate.SetActive(false);
                     DonateActive = false;
                 }
             }
         }
     }
-    private void _DonateSubs()
+    private void _Donate()
     {
         DonateActive = true;
-        WindDonate.SetActive(true);
-        DonatePlayerName = "";
+        WindowDonate.SetActive(true);
+        DonatePlayerName = null;
         SizeRandomName = (int)UnityEngineRandom(3,9);
         for (int i = 0; i < SizeRandomName; i++)
         {
             DonatePlayerName += Alphabet[(int)UnityEngineRandom(0, 25)];
         }
-        inthMoney = UnityEngine.Random.Range(minMoney, maxMoney);
-        strhMoney = "$" + inthMoney;
-        Name.text = DonatePlayerName + " " + "Donated";
-        Money.text = strhMoney;
+        Money = (int)UnityEngineRandom(minMoney, maxMoney); 
+        NameText.text = DonatePlayerName + " " + "Donated";
+        MoneyText.text = "$" + Money;
         isDonate = true;
     }
-public float UnityEngineRandom(float min, float max)
+    public float UnityEngineRandom(float min, float max)
     {
         float _CurrentRandom = UnityEngine.Random.Range(min, max);
         return _CurrentRandom;
     }
 }
-
